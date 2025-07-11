@@ -143,15 +143,6 @@ def obtener_datos_financieros(ticker):
             "WACC": wacc,
             "ROIC": roic,
             "Creación de Valor (WACC vs ROIC)": diferencia_roic_wacc,
-            "Deuda Total": total_debt,
-            "Patrimonio Neto": equity,
-            "Revenue Growth": revenue_growth,
-            "EPS Growth": eps_growth,
-            "FCF Growth": fcf_growth,
-            "Cash Ratio": cash_ratio,
-            "Cash Flow Ratio": cash_flow_ratio,
-            "Operating Cash Flow": operating_cash_flow,
-            "Current Liabilities": current_liabilities,
         }
     except Exception as e:
         return {"Ticker": ticker, "Error": str(e)}
