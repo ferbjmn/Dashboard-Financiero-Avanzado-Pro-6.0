@@ -143,15 +143,6 @@ def obtener_datos_financieros(ticker):
             "WACC": wacc,
             "ROIC": roic,
             "Creación de Valor (WACC vs ROIC)": diferencia_roic_wacc,
-            "Deuda Total": total_debt,
-            "Patrimonio Neto": equity,
-            "Revenue Growth": revenue_growth,
-            "EPS Growth": eps_growth,
-            "FCF Growth": fcf_growth,
-            "Cash Ratio": cash_ratio,
-            "Cash Flow Ratio": cash_flow_ratio,
-            "Operating Cash Flow": operating_cash_flow,
-            "Current Liabilities": current_liabilities,
         }
     except Exception as e:
         return {"Ticker": ticker, "Error": str(e)}
@@ -221,14 +212,14 @@ def main():
             st.header("📋 Resumen General")
             
             # Formatear columnas porcentuales
-            porcentajes = ["Dividend Yield %", "Payout Ratio", "ROA", "ROE", "Oper Margin", "Profit Margin", "WACC", "ROIC", "Creación de Valor (WACC vs ROIC)"]
+            porcentajes = ["Dividend Yield %", "ROA", "ROE", "Oper Margin", "Profit Margin", "WACC", "ROIC"]
             for col in porcentajes:
                 if col in df.columns:
                     df[col] = df[col].apply(lambda x: f"{x:.2%}" if pd.notnull(x) else "N/D")
             
             columnas_mostrar = [
                 "Ticker", "Nombre", "Sector", "Precio", "P/E", "P/B", "P/FCF", 
-                "Dividend Yield %", "Payout Ratio", "ROE", "ROA", "Current Ratio", "Debt/Equity", "Oper Margin", "Profit Margin", "WACC", "ROIC", "Creación de Valor (WACC vs ROIC)"
+                "Dividend Yield %", "ROE", "Debt/Equity", "Profit Margin", "WACC", "ROIC", "Creación de Valor (WACC vs ROIC)"
             ]
             
             st.dataframe(
