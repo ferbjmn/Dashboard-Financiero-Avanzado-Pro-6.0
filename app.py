@@ -253,7 +253,7 @@ def main():
                 ax.set_ylabel("Dividend Yield %")
                 st.pyplot(fig)
                 plt.close()
-            
+      
             # Sección 3: Rentabilidad y Eficiencia
             st.header("📈 Rentabilidad y Eficiencia")
             
